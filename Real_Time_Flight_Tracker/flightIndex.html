@@ -1,0 +1,55 @@
+<html ng-app="cpApp">
+<head>
+<title>Real Time Flight Tracker</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<script src="http://maps.googleapis.com/maps/api/js"></script>
+<script src="flightScript.js"></script>
+<style>
+html {
+	font-size: 15px;
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	height: 100%;
+	background-size: cover;
+}
+body {
+	font-family: 'Lato', sans-serif;
+	text-align: center;
+	font-size: 1.5em;
+	background:#31708F;
+}
+.myContent{
+color:#fff;
+}
+.myContent p{
+font-size:10px;
+}
+#map-canvas {
+	height: 400px;
+	width: 100%;
+}
+</style>
+</head>
+<body>
+	<div class="container" ng-controller="issMapsController as cp">
+	<h2 class="myContent">Real Time Flight Tracker</h2>
+		<div class="col-md-12">
+			<div id="map-canvas"></div>
+		</div><!-- col-md-12-->
+		<div ng-if="details" class="col-md-12 myContent">
+			<h1>{{details[11] +' --> '+ details[12]}}</h1>
+			<h3>{{ details[13]+' / '+details[16] }}</h3>
+			
+			<div class="col-md-4"><p>Speed </p>{{details[5]}} kt</div>
+			<div class="col-md-4"><p>Aircraft </p>{{details[8]}} </div>
+			<div class="col-md-4"><p>Altitude </p>{{details[4]}} ft</div>
+		</div>
+	</div><!-- /.container -->
+</body>
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+</html>
