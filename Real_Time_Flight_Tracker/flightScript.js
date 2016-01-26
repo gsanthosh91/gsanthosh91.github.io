@@ -70,9 +70,9 @@ var app = angular.module('cpApp', []);
 		
 		google.maps.event.addListener(map, 'bounds_changed', function() {
             var bounds =  map.getBounds();
-            $scope.val1=bounds.N.N;
-            $scope.val2=bounds.N.j;
-            $scope.val3=bounds.j.N;
+            $scope.val1=bounds.R.R;
+            $scope.val2=bounds.R.j;
+            $scope.val3=bounds.j.R;
             $scope.val4=bounds.j.j;
    		});
 		$scope.moveISS();
